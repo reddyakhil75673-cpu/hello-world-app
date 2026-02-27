@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Techies</title>
+
+<style>
+
+&nbsp;   body {
+
+&nbsp;       margin: 0;
+
+&nbsp;       font-family: Arial, sans-serif;
+
+&nbsp;       background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+
+&nbsp;       background-size: 400% 400%;
+
+&nbsp;       animation: gradientBG 10s ease infinite;
+
+&nbsp;       color: white;
+
+&nbsp;   }
+
+
+
+&nbsp;   @keyframes gradientBG {
+
+&nbsp;       0% { background-position: 0% 50%; }
+
+&nbsp;       50% { background-position: 100% 50%; }
+
+&nbsp;       100% { background-position: 0% 50%; }
+
+&nbsp;   }
+
+
+
+&nbsp;   header {
+
+&nbsp;       text-align: center;
+
+&nbsp;       padding: 20px;
+
+&nbsp;       font-size: 32px;
+
+&nbsp;       font-weight: bold;
+
+&nbsp;       letter-spacing: 2px;
+
+&nbsp;   }
+
+
+
+&nbsp;   .tagline {
+
+&nbsp;       text-align: center;
+
+&nbsp;       font-size: 16px;
+
+&nbsp;       color: #00ffff;
+
+&nbsp;       margin-bottom: 30px;
+
+&nbsp;   }
+
+
+
+&nbsp;   .container {
+
+&nbsp;       width: 90%;
+
+&nbsp;       max-width: 1100px;
+
+&nbsp;       margin: auto;
+
+&nbsp;   }
+
+
+
+&nbsp;   .stats {
+
+&nbsp;       display: flex;
+
+&nbsp;       justify-content: space-around;
+
+&nbsp;       margin-bottom: 40px;
+
+&nbsp;       text-align: center;
+
+&nbsp;   }
+
+
+
+&nbsp;   .stat-box {
+
+&nbsp;       background: rgba(255, 255, 255, 0.1);
+
+&nbsp;       padding: 20px;
+
+&nbsp;       border-radius: 15px;
+
+&nbsp;       backdrop-filter: blur(10px);
+
+&nbsp;       box-shadow: 0 0 15px rgba(0,255,255,0.5);
+
+&nbsp;   }
+
+
+
+&nbsp;   .form-section {
+
+&nbsp;       display: flex;
+
+&nbsp;       justify-content: space-between;
+
+&nbsp;       gap: 20px;
+
+&nbsp;       flex-wrap: wrap;
+
+&nbsp;   }
+
+
+
+&nbsp;   .form-box {
+
+&nbsp;       flex: 1;
+
+&nbsp;       min-width: 280px;
+
+&nbsp;       background: rgba(255,255,255,0.1);
+
+&nbsp;       padding: 25px;
+
+&nbsp;       border-radius: 15px;
+
+&nbsp;       backdrop-filter: blur(10px);
+
+&nbsp;       box-shadow: 0 0 15px rgba(0,255,255,0.5);
+
+&nbsp;   }
+
+
+
+&nbsp;   input {
+
+&nbsp;       width: 100%;
+
+&nbsp;       padding: 10px;
+
+&nbsp;       margin: 10px 0;
+
+&nbsp;       border: none;
+
+&nbsp;       border-radius: 8px;
+
+&nbsp;   }
+
+
+
+&nbsp;   button {
+
+&nbsp;       width: 100%;
+
+&nbsp;       padding: 10px;
+
+&nbsp;       background: cyan;
+
+&nbsp;       border: none;
+
+&nbsp;       border-radius: 8px;
+
+&nbsp;       font-weight: bold;
+
+&nbsp;       cursor: pointer;
+
+&nbsp;   }
+
+
+
+&nbsp;   button:hover {
+
+&nbsp;       background: #00bcd4;
+
+&nbsp;   }
+
+
+
+&nbsp;   .users-list {
+
+&nbsp;       margin-top: 40px;
+
+&nbsp;   }
+
+
+
+&nbsp;   .user {
+
+&nbsp;       padding: 10px;
+
+&nbsp;       margin: 5px 0;
+
+&nbsp;       background: rgba(255,255,255,0.1);
+
+&nbsp;       border-radius: 8px;
+
+&nbsp;   }
+
+
+
+&nbsp;   footer {
+
+&nbsp;       text-align: center;
+
+&nbsp;       padding: 20px;
+
+&nbsp;       margin-top: 40px;
+
+&nbsp;       font-size: 14px;
+
+&nbsp;       opacity: 0.7;
+
+&nbsp;   }
+
+</head>
+
+<body>
+
+<header>🚀 Future Techies</header>
+<div class="tagline">Innovating Tomorrow, Connecting Innovators</div>
+
+<div class="container">
+
+    <div class="stats">
+        <div class="stat-box">
+            <h2 id="activeUsers">120</h2>
+            <p>Active Users</p>
+        </div>
+        <div class="stat-box">
+            <h2 id="totalUsers">350</h2>
+            <p>Total Users</p>
+        </div>
+    </div>
+
+    <div class="form-section">
+
+        <div class="form-box">
+            <h3>Login</h3>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div class="form-box">
+            <h3>Signup</h3>
+            <input type="text" id="newUser" placeholder="Create Username">
+            <input type="password" placeholder="Create Password">
+            <button onclick="signup()">Signup</button>
+        </div>
+
+    </div>
+
+    <div class="users-list">
+        <h3>Frequently Used People</h3>
+        <div id="userList">
+            <div class="user">TechMaster01</div>
+            <div class="user">CodeWarriorX</div>
+            <div class="user">AI_Genius</div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Future Techies | Designed for Innovation
+</footer>
+
+<script>
+
+&nbsp;   let totalUsers = 350;
+
+&nbsp;   let activeUsers = 120;
+
+
+
+&nbsp;   function signup() {
+
+&nbsp;       let username = document.getElementById("newUser").value;
+
+&nbsp;       if(username !== "") {
+
+&nbsp;           let userDiv = document.createElement("div");
+
+&nbsp;           userDiv.className = "user";
+
+&nbsp;           userDiv.innerText = username;
+
+&nbsp;           document.getElementById("userList").appendChild(userDiv);
+
+
+
+&nbsp;           totalUsers++;
+
+&nbsp;           activeUsers++;
+
+
+
+&nbsp;           document.getElementById("totalUsers").innerText = totalUsers;
+
+&nbsp;           document.getElementById("activeUsers").innerText = activeUsers;
+
+
+
+&nbsp;           alert("Signup Successful!");
+
+&nbsp;       }
+
+&nbsp;   }
+
+
+
+&nbsp;   function login() {
+
+&nbsp;       activeUsers++;
+
+&nbsp;       document.getElementById("activeUsers").innerText = activeUsers;
+
+&nbsp;       alert("Login Successful!");
+
+&nbsp;   }
+
+
+</body>
+
+</html>
